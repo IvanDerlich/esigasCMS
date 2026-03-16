@@ -1,0 +1,5 @@
+
+# This Dockerfile is intentionally left empty for MongoDB, as the official image is used.
+# It is referenced in docker-compose.yml for clarity and future extensibility.
+
+RUN echo "[MongoDB Dev] Dockerfile.mongo is being used during build."
