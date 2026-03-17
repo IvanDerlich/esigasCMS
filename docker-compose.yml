@@ -16,7 +16,6 @@ services:
       - no-new-privileges:true
     volumes:
       - mongo-data:/data/db
-      - entrypoint-volume:/docker-entrypoint-initdb.d
     # No extra capabilities granted
 
 volumes:

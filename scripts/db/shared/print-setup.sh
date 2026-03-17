@@ -30,6 +30,12 @@ echo
 echo
 docker volume ls
 echo
-echo "--- Connect to Mongo Databas with mongosh ---"
+echo "--- Connect to Mongo Databas with mongosh as root---"
 echo "mongosh --host localhost --port $MONGO_PORT -u $MONGO_INITDB_ROOT_USERNAME -p $MONGO_INITDB_ROOT_PASSWORD --authenticationDatabase $MONGO_INITDB_ROOT_DATABASE"
+echo
+echo "--- Connect to Mongo Databas with mongosh as app user---"
+echo "mongosh --host localhost --port $MONGO_PORT -u $MONGO_DB_USER -p $MONGO_DB_PASS --authenticationDatabase $MONGO_DB_NAME"
+echo 
+echo "To see logs of the MongoDB container, use: "
+echo "docker logs -f $MONGO_CONTAINER_NAME"
 
