@@ -5,8 +5,6 @@
 
 # Run sanity check for environment variables
 "$(dirname "$0")/sanity-check.sh"
-# Load environment variables from .env
-export $(grep -v '^#' .env | xargs)
 
 DB_NAME=${MONGO_DB_NAME:-devdb}
 DB_USER=${MONGO_DB_USER:-devdbuser}

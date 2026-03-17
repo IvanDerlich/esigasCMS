@@ -1,8 +1,7 @@
-version: '3.8'
 services:
   mongo:
     image: mongo:latest
-    container_name: mongo-dev
+    container_name: ${MONGO_CONTAINER_NAME}
     restart: unless-stopped
     ports:
       - "${MONGO_PORT}:27017"  # Obscure high port for local MongoDB
@@ -16,6 +15,10 @@ services:
     security_opt:
       - no-new-privileges:true
     volumes:
-      - ./.docker-volumes/:/data/db
-      - ./.docker-volumes/init-user.js:/docker-entrypoint-initdb.d/init-user.js:ro
+      - mongo-data:/data/db
+      - entrypoint-volume:/docker-entrypoint-initdb.d
     # No extra capabilities granted
+
+volumes:
+  mongo-data:
+  entrypoint-volume:

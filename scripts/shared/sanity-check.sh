@@ -10,16 +10,24 @@ REQUIRED_VARS=(
   MONGO_DB_NAME
   MONGO_DB_USER
   MONGO_DB_PASS
+  MONGO_CONTAINER_NAME
 )
 
-if [ ! -f .env ]; then
-  echo ".env file not found!" >&2
+PROJECT_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+ENV_FILE="$PROJECT_ROOT/.env"
+if [ ! -f "$ENV_FILE" ]; then
+  echo ".env file not found in project root ($PROJECT_ROOT)!" >&2
   exit 1
 fi
 
+# Load environment variables from .env
+set -a
+source "$ENV_FILE"
+set +a
+
 missing=0
 for var in "${REQUIRED_VARS[@]}"; do
-  if ! grep -q "^$var=" .env; then
+  if [ -z "${!var}" ]; then
     echo "Missing required variable: $var" >&2
     missing=1
   fi
