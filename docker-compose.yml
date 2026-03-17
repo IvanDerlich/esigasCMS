@@ -1,6 +1,5 @@
 services:
   mongo:
-    image: mongo:latest
     container_name: ${MONGO_CONTAINER_NAME}
     restart: unless-stopped
     ports:

@@ -2,7 +2,7 @@
 # Project DB management tool
 # Usage: ./db -p (preserve) | -d (destroy) | -c (cleanup)
 
-source "${pwd}/scripts/load-and-sanity-check.sh"
+source "./scripts/load-and-sanity-check.sh"
 echo "--- pwd: $(pwd) ---"
 
 case "$1" in

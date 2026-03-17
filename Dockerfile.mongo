@@ -1,8 +1,6 @@
-
+FROM mongo:latest
 # This Dockerfile is intentionally left empty for MongoDB, as the official image is used.
 # It is referenced in docker-compose.yml for clarity and future extensibility.
 
-# Copy the generated MongoDB initialization script into the image
-COPY .generated/init-user.js /docker-entrypoint-initdb.d/
 
 RUN echo "[MongoDB Dev] Dockerfile.mongo is being used during build."

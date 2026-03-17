@@ -13,11 +13,4 @@ if [ -f "$ENTRYPOINT_SCRIPT" ]; then
   rm "$ENTRYPOINT_SCRIPT"
 fi
 
-# Regenerate the entrypoint initialization script
-"$(dirname "$0")/shared/generate-file-for-entrypoint-volume.sh"
-
-echo "Starting MongoDB container with docker compose..."
-docker compose up -d
-
-# Print Docker setup state
-"$(dirname "$0")/shared/print-setup.sh"
+"$(pwd)/scripts/db/shared/init.sh"

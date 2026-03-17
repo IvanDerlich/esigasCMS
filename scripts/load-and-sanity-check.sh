@@ -13,9 +13,6 @@ REQUIRED_VARS=(
   MONGO_CONTAINER_NAME
 )
 
-echo "---pwd: $(pwd)"
-
-
 PROJECT_ROOT="$(pwd)"
 ENV_FILE="$PROJECT_ROOT/.env"
 
