@@ -14,4 +14,4 @@ echo "Starting MongoDB container with fresh data..."
 docker compose up -d
 
 # Print Docker setup state
-"$(dirname "$0")/../print-setup.sh"
+"$(dirname "$0")/share/print-setup.sh"

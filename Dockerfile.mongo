@@ -3,6 +3,6 @@
 # It is referenced in docker-compose.yml for clarity and future extensibility.
 
 # Copy the generated MongoDB initialization script into the image
-COPY .docker-volumes/init-user.js /docker-entrypoint-initdb.d/
+COPY .docker-aux/init-user.js /docker-entrypoint-initdb.d/
 
 RUN echo "[MongoDB Dev] Dockerfile.mongo is being used during build."

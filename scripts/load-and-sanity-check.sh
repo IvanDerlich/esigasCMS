@@ -13,8 +13,12 @@ REQUIRED_VARS=(
   MONGO_CONTAINER_NAME
 )
 
-PROJECT_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+echo "---pwd: $(pwd)"
+
+
+PROJECT_ROOT="$(pwd)"
 ENV_FILE="$PROJECT_ROOT/.env"
+
 if [ ! -f "$ENV_FILE" ]; then
   echo ".env file not found in project root ($PROJECT_ROOT)!" >&2
   exit 1
