@@ -1,6 +1,7 @@
 #!/bin/bash
 # Script to start the MongoDB container
-# Usage: ./scripts/init-mongo-container.sh
+# Preserves existing data volume
+# Only removes the entrypoint initialization script
 
 
 set -e

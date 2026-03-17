@@ -1,6 +1,6 @@
 #!/bin/bash
-# Script to start the MongoDB container with fresh data (removes existing data volume)
-# Usage: ./scripts/init-mongo/fresh-data.sh
+# Script to start the MongoDB container with fresh data 
+# Removes existing data volume
 
 set -e
 
