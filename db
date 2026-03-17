@@ -1,0 +1,21 @@
+#!/bin/bash
+# Project DB management tool
+# Usage: ./db -p (preserve) | -d (destroy) | -c (cleanup)
+
+source "${pwd}/scripts/load-and-sanity-check.sh"
+echo "--- pwd: $(pwd) ---"
+
+case "$1" in
+  -p|--preserve)
+    sudo bash ./scripts/db/preserve.sh
+    ;;
+  -d|--destroy)
+    sudo bash ./scripts/db/destroy.sh
+    ;;
+  -c|--cleanup)
+    sudo bash ./scripts/db/cleanup.sh
+    ;;
+  *)
+    echo "Usage: db [-p|--preserve] [-d|--destroy] [-c|--cleanup]"
+    ;;
+esac

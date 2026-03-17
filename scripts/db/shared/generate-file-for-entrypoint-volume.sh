@@ -9,8 +9,6 @@ DB_NAME=${MONGO_DB_NAME}
 DB_USER=${MONGO_DB_USER}
 DB_PASS=${MONGO_DB_PASS}
 
-echo "DB_NAME=$DB_NAME, DB_USER=$DB_USER, DB_PASS=$DB_PASS"
-
 OUTPUT=.generated/create-app-user-and-database.js
 
 cat > "$OUTPUT" <<EOF
