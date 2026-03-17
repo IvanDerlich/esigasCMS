@@ -29,6 +29,13 @@ else
 	echo "Volume cms-esigas_entrypoint-volume does not exist."
 fi
 
+echo "Removing network cms-esigas_default..."
+if docker network ls --format '{{.Name}}' | grep -Fxq "cms-esigas_default"; then
+	docker network rm "cms-esigas_default"
+else
+	echo "Network cms-esigas_default does not exist."
+fi
+
 echo "Cleanup complete."
 
 # Print Docker setup state
